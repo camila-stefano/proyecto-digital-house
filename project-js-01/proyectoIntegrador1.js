@@ -145,6 +145,57 @@ function mostrarTareasNoCompletadas() {
   });
 }
 
+// Funcion para ordenar tareas por la propiedad 'nombre' utilizando BubbleSort]
+
+function ordenarTareasPorNombre() {
+  let total = tareas.length;
+
+  for (let j = 0; j < total; j++) {
+    for (let i = 0; i < total; i++) {
+      if (tareas[i].nombre > tareas[i + 1].nombre) {
+        let temporal = tareas[i];
+        tareas[i] = tareas[i + 1];
+        tareas[i + 1] = temporal;
+      }
+    }
+  }
+}
+
+// Funcion para ordenar tareas por la propiedad 'fechaLimite' utilizando BubbleSort]
+
+function ordenarTareasPorFechaLimite() {
+  let total = tareas.length;
+
+  for (let j = 0; j < total; j++) {
+    for (let i = 0; i < total; i++) {
+      if (tareas[i].fechaLimite > tareas[i + 1].fechaLimite) {
+        let temporal = tareas[i];
+        tareas[i] = tareas[i + 1];
+        tareas[i + 1] = temporal;
+      }
+    }
+  }
+}
+
+// Funcion que busca una tarea por nombre y retorna su posicion
+
+function buscarTareaPorNombre(nombreTarea) {
+  let inicio = 0;
+  let fin = tareas.length - 1;
+
+  while (inicio <= fin) {
+    let posElementoMedio = Math.round((inicio + fin) / 2);
+    if (tareas[posElementoMedio].nombre === nombreTarea) {
+      return posElementoMedio;
+    } else if (tareas[posElementoMedio].nombre < nombreTarea) {
+      inicio = posElementoMedio + 1;
+    } else {
+      fin = posElementoMedio - 1;
+    }
+  }
+  return -1;
+}
+
 // funcion para mostrar el menu de opciones
 
 function mostrarMenu() {
@@ -159,6 +210,9 @@ function mostrarMenu() {
   console.log("8. Filtrar tareas por categoria");
   console.log("9. Visualizar cantidad de tareas completadas por categoria");
   console.log("10. Visualizar todas las tareas no completadas");
+  console.log("11. Ordenar las tareas alfabeticamente");
+  console.log("12. Ordenar tareas por fecha limite");
+  console.log("13. Buscar tarea por su nombre");
   console.log("0. Salir");
 }
 
@@ -282,6 +336,32 @@ function interactuar() {
 
       case 10:
         mostrarTareasNoCompletadas();
+        break;
+
+      case 11:
+        ordenarTareasPorNombre();
+        console.log("Tareas por nombre: ");
+        console.log(tareas);
+        break;
+
+      case 12:
+        ordenarTareasPorFechaLimite();
+        console.log("Tareas por fecha: ");
+        console.log(tareas);
+        break;
+
+      case 13:
+        ordenarTareasPorNombre();
+
+        let nombreAbuscar = prompt("Ingrese nombre de la tarea a buscar: ");
+        let indiceTarea = buscarTareaPorNombre(nombreAbuscar);
+
+        if (indiceTarea !== -1) {
+          console.log("Tarea encontrada en el indice: " + indiceTarea);
+        } else {
+          console.log("Tarea no encontrada");
+        }
+
         break;
 
       default:
