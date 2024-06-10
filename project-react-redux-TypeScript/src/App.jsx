@@ -2,6 +2,7 @@ import "./App.css";
 import Counter from "./hooks/Counter";
 import { MeasureElement } from "./hooks/MeasureElement";
 import RoomWithCanvas from "./hooks/RoomWithCanvas";
+import { ParentComponent } from "./hooks/useCallback/ParentComponent";
 import { Office } from "./hooks/useContext/Office";
 import { Statics } from "./hooks/useMemo/Statics";
 import { CounterReducer } from "./hooks/useReducer/CounterReducer";
@@ -57,6 +58,19 @@ function App() {
       >
         useMemo
         <Statics />
+      </div>
+      <div
+        style={{
+          marginBottom: 20,
+          padding: 10,
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        useCallback
+        <ParentComponent />
       </div>
     </>
   );
