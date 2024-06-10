@@ -3,6 +3,7 @@ import Counter from "./hooks/Counter";
 import { MeasureElement } from "./hooks/MeasureElement";
 import RoomWithCanvas from "./hooks/RoomWithCanvas";
 import { Office } from "./hooks/useContext/Office";
+import { Statics } from "./hooks/useMemo/Statics";
 import { CounterReducer } from "./hooks/useReducer/CounterReducer";
 import { InputWithFocus } from "./hooks/useRef/InputWithFocus";
 
@@ -43,6 +44,19 @@ function App() {
       >
         useLayoutEffect
         <MeasureElement />
+      </div>
+      <div
+        style={{
+          marginBottom: 20,
+          padding: 10,
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        useMemo
+        <Statics />
       </div>
     </>
   );
