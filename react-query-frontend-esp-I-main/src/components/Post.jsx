@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react'
-import { getPostId } from '../service'
-import PropTypes from 'prop-types'
-import { useQuery } from '@tanstack/react-query'
+import { useEffect, useState } from "react";
+import { getPostId } from "../service";
+import PropTypes from "prop-types";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
 export const Post = ({ id }) => {
+  const {
+    data: post,
+    error,
+    isLoading,
+  } = useQuery(["post", id], () => getPostId(id));
 
-  const {data:post, error, isLoading } = useQuery(['post', id], () => getPostId(id))
-
-  
   // const [post, setPost] = useState({
   //   title: '',
   //   body: ''
@@ -34,9 +37,9 @@ export const Post = ({ id }) => {
       <h4>{post?.title}</h4>
       <p>{post?.body}</p>
     </div>
-  )
-}
+  );
+};
 
 Post.propTypes = {
-  id: PropTypes.number.isRequired
-}
+  id: PropTypes.number.isRequired,
+};
