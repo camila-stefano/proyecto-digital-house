@@ -10,6 +10,7 @@ import { InputWithFocus } from "./hooks/useRef/InputWithFocus";
 import { ComponentAvanzado } from "./proptypes/ComponentAvanzado";
 import ComponentBasic from "./proptypes/ComponentBasic";
 import React from "react";
+import { ComponentsWithChildren } from "./proptypes/ComponentsWithChildren";
 
 const list = [
   { id: 1, name: "React" },
@@ -106,6 +107,21 @@ function App() {
       >
         PropTypes Avanzado
         <ComponentAvanzado list={list} title={"tecnologias"} />
+      </div>
+      <div
+        style={{
+          marginBottom: 20,
+          padding: 10,
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        PropTypes With Children
+        <ComponentsWithChildren title={"Encabezado"}>
+          <p>Soy un parrafo</p>
+        </ComponentsWithChildren>
       </div>
     </>
   );
