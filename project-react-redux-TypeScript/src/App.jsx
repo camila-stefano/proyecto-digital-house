@@ -7,11 +7,18 @@ import { Office } from "./hooks/useContext/Office";
 import { Statics } from "./hooks/useMemo/Statics";
 import { CounterReducer } from "./hooks/useReducer/CounterReducer";
 import { InputWithFocus } from "./hooks/useRef/InputWithFocus";
+import { ComponentAvanzado } from "./proptypes/ComponentAvanzado";
 import ComponentBasic from "./proptypes/ComponentBasic";
 import React from "react";
 
+const list = [
+  { id: 1, name: "React" },
+  { id: 2, name: "Vue" },
+  { id: 3, name: "Angular" },
+  { id: 4, name: "Laravel", description: "Framework de PTP" },
+];
+
 function App() {
-  console.log("Render App");
   return (
     <>
       <div style={{ marginBottom: 5, padding: 5 }}>Hooks</div>
@@ -86,6 +93,19 @@ function App() {
       >
         PropTypes
         <ComponentBasic texto={"Hola"} />
+      </div>
+      <div
+        style={{
+          marginBottom: 20,
+          padding: 10,
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        PropTypes Avanzado
+        <ComponentAvanzado list={list} title={"tecnologias"} />
       </div>
     </>
   );
