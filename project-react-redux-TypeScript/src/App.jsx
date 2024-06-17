@@ -7,6 +7,8 @@ import { Office } from "./hooks/useContext/Office";
 import { Statics } from "./hooks/useMemo/Statics";
 import { CounterReducer } from "./hooks/useReducer/CounterReducer";
 import { InputWithFocus } from "./hooks/useRef/InputWithFocus";
+import ComponentBasic from "./proptypes/ComponentBasic";
+import React from "react";
 
 function App() {
   console.log("Render App");
@@ -71,6 +73,19 @@ function App() {
       >
         useCallback
         <ParentComponent />
+      </div>
+      <div
+        style={{
+          marginBottom: 20,
+          padding: 10,
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        PropTypes
+        <ComponentBasic texto={"Hola"} />
       </div>
     </>
   );

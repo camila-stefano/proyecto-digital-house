@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { ChildComponent } from "./ChildComponent";
+import React from "react";
 
 export const ParentComponent = () => {
   const [count, setCount] = useState(0);
@@ -17,7 +18,10 @@ export const ParentComponent = () => {
   return (
     <div>
       <p>Count: {count}</p>
-      <ChildComponent onClick={handleClick} />
+      <ChildComponent
+        // @ts-ignore
+        onClick={handleClick}
+      />
     </div>
   );
 };

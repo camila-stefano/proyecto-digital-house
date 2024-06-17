@@ -10,7 +10,7 @@ let userName = "Cami";
  * @type {number}
  */
 
-let userAge = 45;
+//let userAge = 45;
 
 /** 
 Lista de edades de usuarios
