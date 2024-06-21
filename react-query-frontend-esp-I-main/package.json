@@ -11,7 +11,7 @@
     "server": "json-server --watch db.json --delay 1500 --port 3000"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.33.0",
+    "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.33.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
