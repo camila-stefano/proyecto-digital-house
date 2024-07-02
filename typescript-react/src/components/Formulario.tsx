@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const Formulario = () => {
   const [input, setInput] = useState<string>("");
-  const [visible, setVisible] = useState<boolean>(true);
+  //const [visible, setVisible] = useState<boolean>(true);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
