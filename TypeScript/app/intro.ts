@@ -1,3 +1,5 @@
+import { Color, Persona } from "../interface/persona";
+
 let saludo = "Hola mundo ts";
 
 let nombre: string = "Juan";
@@ -45,8 +47,6 @@ class Producto {
   }
 }
 
-type Color = "rojo" | "verde" | "amarillo";
-
 let colors: Color = "rojo";
 
 // Uso de tipos genericos
@@ -58,3 +58,37 @@ function duplicar<T>(valor: T) {
 const numeroDuplicado: number = duplicar(5);
 
 const textoDuplicado: string = duplicar("Hola");
+
+interface Domicilio {
+  calle: string;
+  numero: number;
+}
+
+const persona: Persona = {
+  nombre: "Camila",
+  edad: 29,
+  domicilio: {
+    calle: "San Juan",
+    numero: 1234,
+  },
+};
+
+interface Animal {
+  nombre: string;
+  tipo: string;
+}
+
+interface Pajaro extends Animal {
+  colorPlumaje: string;
+}
+
+const Tortuga: Animal = {
+  nombre: "Manuelita",
+  tipo: "Terrestre",
+};
+
+const Tucan: Pajaro = {
+  nombre: "Tuki",
+  tipo: "Ave",
+  colorPlumaje: "Negro",
+};

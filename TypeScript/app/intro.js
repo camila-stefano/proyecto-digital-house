@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let saludo = "Hola mundo ts";
 let nombre = "Juan";
 let edad = 23;
@@ -42,3 +43,20 @@ function duplicar(valor) {
 }
 const numeroDuplicado = duplicar(5);
 const textoDuplicado = duplicar("Hola");
+const persona = {
+    nombre: "Camila",
+    edad: 29,
+    domicilio: {
+        calle: "San Juan",
+        numero: 1234,
+    },
+};
+const Tortuga = {
+    nombre: "Manuelita",
+    tipo: "Terrestre",
+};
+const Tucan = {
+    nombre: "Tuki",
+    tipo: "Ave",
+    colorPlumaje: "Negro",
+};
